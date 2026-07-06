@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Метатеги -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Our last year</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Сброс стандартных отступов */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Стили для body */
+        body {
+            background: #c9b3aa;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Основной контейнер */
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        /* Видеоплеер */
+        #mainVideo {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 28px;
+            object-fit: contain;
+            max-height: 70vh;
+        }
+        
+        /* Блок с кнопками управления - КНОПКИ ПО ЦЕНТРУ, РАССТОЯНИЕ 3px */
+        .video-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 3px;
+            width: 100%;
+        }
+        
+        /* Стили кнопок */
+        .story-button {
+            background: #dfc7bc;
+            border: 1px solid #c7aba0;
+            color: #402f29;
+            padding: 14px 38px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.15s;
+            cursor: pointer;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            text-align: center;
+        }
+        
+        /* Ховер для кнопок */
+        .story-button:hover {
+            background: #ecd7cd;
+        }
+        
+        /* Адаптив для мобилок */
+        @media (max-width: 500px) {
+            .container {
+                padding: 16px;
+            }
+            .story-button {
+                padding: 10px 24px;
+                font-size: 1rem;
+            }
+            .video-controls {
+                gap: 12px;
+                margin-top: 3px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Контейнер видео -->
+        <div class="video-container">
+            <video id="mainVideo" autoplay muted playsinline webkit-playsinline>
+                <source src="video/OurYear.mp4" type="video/mp4">
+            </video>
+        </div>
+        <!-- Блок кнопок по центру -->
+        <div class="video-controls">
+            <button id="skipBtn" class="story-button">Пропустить</button>
+            <button id="replayBtn" class="story-button">Смотреть заново</button>
+        </div>
+    </div>
+
+    <script>
+        // DOM элементы
+        const video = document.getElementById('mainVideo');
+        const skipBtn = document.getElementById('skipBtn');
+        const replayBtn = document.getElementById('replayBtn');
+
+        // Переход на страницу истории
+        function goToStory() {
+            window.location.href = 'story.html';
+        }
+
+        // Событие окончания видео
+        video.addEventListener('ended', goToStory);
+        // Клик по кнопке пропуска
+        skipBtn.addEventListener('click', goToStory);
+        
+        // Клик по кнопке повтора
+        replayBtn.addEventListener('click', () => {
+            video.currentTime = 0;
+            video.play();
+        });
+
+        // Запуск видео по первому касанию на мобилке
+        document.addEventListener('touchstart', () => {
+            if (video.paused) video.play();
+        }, { once: true });
+    </script>
+</body>
+</html>

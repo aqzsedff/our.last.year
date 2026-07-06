@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Моменты</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Стили для контейнера с иконкой звука */
+        .media-wrapper {
+            position: relative;
+        }
+        
+        .sound-icon {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            font-size: 24px;
+            opacity: 0.6;
+            background: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            padding: 5px;
+            pointer-events: none;
+            z-index: 5;
+            transition: opacity 0.2s;
+            color: white;
+            text-shadow: 0 0 2px black;
+        }
+        
+        .media-wrapper:hover .sound-icon {
+            opacity: 0.9;
+        }
+        
+        /* Подсказка при наведении */
+        .media-wrapper {
+            cursor: pointer;
+        }
+        
+        .media-wrapper video {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container moments-container">
+        <h2 class="moments-header">Наши воспоминания</h2>
+        <div class="polaroid-grid">
+
+            <div class="polaroid">
+                <div class="media-wrapper">
+                    <img src="images/Latiao.jpg" alt="Латяо">
+                </div>
+                <div class="polaroid-caption">
+                    Наше любимое латяо, когда мы открыли для себя Миди, нас оттуда за уши надо было оттаскивать
+                </div>
+            </div>
+
+            <div class="polaroid">
+                <div class="media-wrapper">
+                    <img src="images/Love.jpg" alt="Любовь">
+                </div>
+                <div class="polaroid-caption">
+                    Никто не умеет также перемывать косточки, как мы с тобой <br>
+                    Моя любимая сплетница
+                </div>
+            </div>
+
+            <div class="polaroid">
+                <div class="media-wrapper">
+                    <video src="video/Horror.mp4" autoplay muted loop playsinline></video>
+                    <div class="sound-icon">🔇</div>
+                </div>
+                <div class="polaroid-caption">
+                    А как же когда на ночевке мы писали и кошмарили всех кого можно и нельзя, <br>
+                    а как же красные трусики, и после этого мы у них всех в чс <br>
+                    «Красные кружевные стринги»
+                </div>
+            </div>
+
+            <div class="polaroid">
+                <div class="media-wrapper">
+                    <video src="video/Travel.mp4" autoplay muted loop playsinline></video>
+                    <div class="sound-icon">🔇</div>
+                </div>
+                <div class="polaroid-caption">
+                    Или вспомнить наш эпический маршрут к Мики — через трубы, потом гаражи
+                </div>
+            </div>
+
+            <div class="polaroid">
+                <div class="media-wrapper">
+                    <video src="video/Car.mp4" autoplay muted loop playsinline></video>
+                    <div class="sound-icon">🔇</div>
+                </div>
+                <div class="polaroid-caption">
+                    Наши любимые поездки на машинке
+                </div>
+            </div>
+            
+            <div class="polaroid">
+                <div class="media-wrapper">
+                    <img src="images/Company.jpg" alt="Море">
+                </div>
+                <div class="polaroid-caption">
+                    Помнишь то море, в которое мы зашли всего несколько раз и то ножки помочить и как потом возвращались домой
+                </div>
+            </div>
+
+            <div class="polaroid">
+                <div class="media-wrapper">
+                    <img src="images/Condensed_milk.jpg" alt="Сгущенка">
+                </div>
+                <div class="polaroid-caption">
+                    Или же наша первая ссора, из-за одного недоразумения, сама знаешь как его зовут
+                </div>            
+            </div>
+
+            <div class="polaroid">
+                <div class="media-wrapper">
+                    <video src="video/New_Year.mp4" autoplay muted loop playsinline></video>
+                    <div class="sound-icon">🔇</div>
+                </div>
+                <div class="polaroid-caption">
+                    Новогодняя ночь, правда или действие, посиделки на кухне со всеми, когда уже никто не помнит, который час, но всем хорошо <br>
+                    Жаль конечно что они оказались такими ***
+                </div>
+            </div>
+
+            <div class="polaroid">
+                <div class="media-wrapper">
+                    <video src="video/Party.mp4" autoplay muted loop playsinline></video>
+                    <div class="sound-icon">🔇</div>
+                </div>
+                <div class="polaroid-caption">
+                    Тусовки, где музыка играла так громко, что мы ничего не слышали, кроме друг друга <br>
+                    Потому что у нас была своя волна
+                </div>
+            </div>
+
+            <div class="polaroid">
+                <div class="media-wrapper">
+                    <video src="video/Alcoholics.mp4" autoplay muted loop playsinline></video>
+                    <div class="sound-icon">🔇</div>
+                </div>
+                <div class="polaroid-caption">
+                    Пивной двор — место, где мы просидели сотню раз, выпили литры гадости и переговорили о жизни так, будто нам платят за каждую новую сплетню. Выйб был нереальный. А помнишь того мужика? 'Дайте обниму вас хотя бы, если есть что-то, то и прижаться можно' — ужас, но зато есть что вспомнить
+                </div>
+            </div>
+
+        </div>
+        <div class="moments-footer">
+            <a href="story.html" class="story-button">← Вернуться</a>
+            <a href="game.html" class="story-button">Дальше - игра →</a>
+        </div>
+    </div>
+
+    <script>
+        // Настраиваем все видео
+        const videos = document.querySelectorAll('.polaroid video');
+        
+        videos.forEach(video => {
+            // Находим иконку звука рядом с видео
+            const wrapper = video.closest('.media-wrapper');
+            const icon = wrapper.querySelector('.sound-icon');
+            
+            let clickTimer = null;
+            
+            // Обновляем иконку в зависимости от состояния muted
+            function updateIcon() {
+                if (video.muted) {
+                    icon.textContent = '✦';
+                } else {
+                    icon.textContent = '✧';
+                }
+            }
+            
+            // Обработчик клика (одинарный/двойной)
+            video.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                if (clickTimer) {
+                    // Двойной клик — перемотка в начало
+                    clearTimeout(clickTimer);
+                    clickTimer = null;
+                    video.currentTime = 0;
+                } else {
+                    // Одинарный клик — ждём 250мс, чтобы проверить не двойной ли
+                    clickTimer = setTimeout(() => {
+                        // Переключаем звук
+                        video.muted = !video.muted;
+                        updateIcon();
+                        clickTimer = null;
+                    }, 250);
+                }
+            });
+            
+            // Для iPhone — поддержка касаний
+            video.addEventListener('touchstart', function(e) {
+                e.stopPropagation();
+                
+                if (clickTimer) {
+                    clearTimeout(clickTimer);
+                    clickTimer = null;
+                    video.currentTime = 0;
+                } else {
+                    clickTimer = setTimeout(() => {
+                        video.muted = !video.muted;
+                        updateIcon();
+                        clickTimer = null;
+                    }, 250);
+                }
+            });
+            
+            // Запрещаем контекстное меню на видео
+            video.addEventListener('contextmenu', (e) => {
+                e.preventDefault();
+            });
+            
+            // Инициализация иконки
+            updateIcon();
+        });
+    </script>
+</body>
+</html>

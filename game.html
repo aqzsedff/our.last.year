@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Игра</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container game-container">
+        <h2 class="game-title">Не лови бомбочки</h2>
+        <div class="game-stats">
+            <span>Счёт: <span id="score">0</span></span>
+        </div>
+        <canvas id="gameCanvas" width="400" height="500"></canvas>
+        <div class="game-buttons">
+            <a href="moments.html" class="control-btn">← Вернуться</a>
+            <button id="restartGameBtn" class="control-btn">Начать заново</button>
+        </div>
+    </div>
+    <script src="js/game.js"></script>
+</body>
+</html>
